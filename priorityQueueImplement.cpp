@@ -34,10 +34,10 @@ private:
     int leftChild = getLeftChild(i);
     int rightChild = getRightChild(i);
     int maxIdx = i;
-    if(leftChild < int(A.size()) && A[leftChild] > A[i]){
+    if(leftChild < int(A.size()) && A[leftChild] > A[maxIdx]){
       maxIdx = leftChild;
     }
-    if(rightChild < int(A.size()) && A[rightChild] > A[i]){
+    if(rightChild < int(A.size()) && A[rightChild] > A[maxIdx]){
       maxIdx = rightChild;
     }
 
