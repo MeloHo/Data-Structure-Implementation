@@ -46,3 +46,35 @@ int main()
 
 */
 
+/*
+// Define own hash
+
+#include <iostream>
+#include <boost/functional/hash.hpp>
+#include <unordered_map>
+
+template <typename Container>
+class CustomHash{
+public:
+  std::size_t operator()(const Container& con) const{
+    return boost::hash_range(con.begin(), con.end());
+  }
+};
+
+int main() {
+  std::vector<std::vector<int>> t{{1, 2}, {3, 4}};
+  std::unordered_map<std::vector<int>, int, CustomHash<std::vector<int>>> m;
+  for (const auto& t_ : t) {
+    m[t_] += 1;
+  }
+  
+  std::cout << m.size() << std::endl;
+  std::vector<int> f{1, 2};
+  
+  if (m.find(f) != m.end()) {
+    std::cout << "f in it." << std::endl;
+    std::cout << m[f] << std::endl;
+  }
+  
+  return 0;
+}*/
